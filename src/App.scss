@@ -41,8 +41,8 @@
 $black: #111111;
 $white: #ffffff;
 
-@mixin glitchCopy {
-  content: attr(data-text);
+@mixin glitchCopy($data) {
+  content: attr($data);
   position: absolute;
   top: 0;
   left: 0;
@@ -68,18 +68,22 @@ $white: #ffffff;
 
   .wrapper {
     text-align: center;
+	
+    img {
+      max-height: 150px;
+    }
 
     .glitch {
       position: relative;
       color: $white;
-      font-size: 2em;;
+      font-size: 2em;
       letter-spacing: 1em;
       text-transform: uppercase;
 
       animation: glitch-skew 1s infinite linear alternate-reverse;
 
       &::before {
-        @include glitchCopy;
+        @include glitchCopy(data-text);
         left: 2px;
         text-shadow: -2px 0 #ff00c1;
         clip: rect(44px, 450px, 56px, 0);
@@ -88,7 +92,7 @@ $white: #ffffff;
       }
 
       &::after {
-        @include glitchCopy;
+        @include glitchCopy(data-text);
         left: -2px;
         text-shadow: -2px 0 #00ff99, 2px 2px #ff00c1;
 
