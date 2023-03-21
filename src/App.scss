@@ -38,8 +38,25 @@
 }
 */
 
+// Color
 $black: #111111;
 $white: #ffffff;
+
+// Breakpoints for widths of devices
+   // Mobile devices
+	$minMobile: 320px;
+	$maxMobile: 480px;
+  // iPads, Tablets
+	$minTablet: 481px;
+	$maxTablet: 768px;
+  // Laptops, small screens
+	$minLaptop: 769px;
+	$maxLaptop: 1024px;
+  // Desktops, large screens
+	$minLaptop: 1025px;
+	$maxLaptop: 1200px;
+  // TV, extra large screens
+	$minTV: 1201px;
 
 @mixin glitchCopy($data) {
   content: attr($data);
@@ -68,6 +85,7 @@ $white: #ffffff;
 
   .wrapper {
     text-align: center;
+    padding: 0 1em;
 	
     img {
       max-height: 150px;
@@ -98,6 +116,21 @@ $white: #ffffff;
         text-shadow: -2px 0 #00ff99, 2px 2px #ff00c1;
 
         animation: glitch-anim2 1s infinite linear alternate-reverse;
+      }
+
+      @media screen and (max-width: $maxTablet) {
+         letter-spacing: .5em;
+	 margin-right: -.5em;
+      }
+
+      @media screen and (max-width: $maxMobile) {
+	 letter-spacing: .25em;
+	 margin-right: -.25em;
+      }
+
+      @media screen and (max-width: $minMobile) {
+	 letter-spacing: .1em;
+	 margin-right: -.1em;
       }
 
     }
