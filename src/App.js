@@ -15,7 +15,7 @@ function App(props) {
       </Helmet>
 
       <header className="wrapper">
-         <img className="glitch" data-src="./images/logo/Logo-3.png" src="./images/logo/Logo-3.png" alt="Mario Senese" width="150" height="150" />
+         <img src="./images/logo/Logo-3.png" alt="Mario Senese" width="150" height="150" />
 	 <h1 className="glitch" data-text={props.name}>
           {props.name}
         </h1>
